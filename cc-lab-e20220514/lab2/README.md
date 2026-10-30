@@ -67,7 +67,10 @@ About how many minutes passed between stopping `httpd` and the new instance beco
 
 3. Who replaced the failed instance: the load balancer, the target group, or the Auto Scaling group? Explain the role of each one.
 
-   => The Auto Scaling group replaced it. - The load balancer receives the requests and sends them only to healthy targets. - The target group keeps the list of targets and runs the health checks. It marked the instance unhealthy. - The Auto Scaling group has ELB health checks turned on. It saw the unhealthy instance, removed it, and launched a new one to keep the desired capacity of 2. The new instance was registered in the target group.
+   => The Auto Scaling group replaced it.
+   - The load balancer receives the requests and sends them only to healthy targets.
+   - The target group keeps the list of targets and runs the health checks. It marked the instance unhealthy.
+   - The Auto Scaling group has ELB health checks turned on. It saw the unhealthy instance, removed it, and launched a new one to keep the desired capacity of 2. The new instance was registered in the target group.
 
 4. With desired 2, minimum 2 and maximum 3, how many instances run normally? In what situation could there be 3?
 
