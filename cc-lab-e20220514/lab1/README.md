@@ -71,19 +71,19 @@ echo 'Welcome to the EC2 Challenge' | sudo tee /usr/share/nginx/html/index.html
 
 1. Your security group has an SSH rule and an HTTP rule. What does each one let you do? What would stop working if you deleted the HTTP rule?
 
-=> The SSH rule allows me to connect to and manage my EC2 instance remotely using port 22. The HTTP rule allows users to access my web page through a browser using port 80. If I deleted the HTTP rule, users would no longer be able to access my web page through HTTP from outside the instance, even if the web server was still running.
+   => The SSH rule allows me to connect to and manage my EC2 instance remotely using port 22. The HTTP rule allows users to access my web page through a browser using port 80. If I deleted the HTTP rule, users would no longer be able to access my web page through HTTP from outside the instance, even if the web server was still running.
 
 2. In Part 1.1 you never logged in to install the web server. What installed it, and when did it run?
 
-=> The user data script installed the Apache web server automatically when the EC2 instance launched. The script ran during the instance's startup process, so I did not need to log in and install the web server manually.
+   => The user data script installed the Apache web server automatically when the EC2 instance launched. The script ran during the instance's startup process, so I did not need to log in and install the web server manually.
 
 3. Why does the web page open with `http://` but not with `https://`?
 
-=> The web page opens with HTTP because the web server is configured to accept HTTP requests on port 80. HTTPS normally uses port 443 and requires HTTPS configuration, including a TLS certificate. Since I did not configure HTTPS for this challenge, the web page works with HTTP but not HTTPS.
+   => The web page opens with HTTP because the web server is configured to accept HTTP requests on port 80. HTTPS normally uses port 443 and requires HTTPS configuration, including a TLS certificate. Since I did not configure HTTPS for this challenge, the web page works with HTTP but not HTTPS.
 
 4. Part 1.2 asked for a 10 GiB root volume. Where in the launch settings did you set it, and how can you check the size on the running instance?
 
-=>I set the root volume size to 10 GiB in the Storage section of the EC2 launch settings. The launch summary showed one volume with a size of 10 GiB. I can also check the volume size in the AWS Console under EC2 → Elastic Block Store → Volumes or use the lsblk command on the running Linux instance.
+   => I set the root volume size to 10 GiB in the Storage section of the EC2 launch settings. The launch summary showed one volume with a size of 10 GiB. I can also check the volume size in the AWS Console under EC2 → Elastic Block Store → Volumes or use the lsblk command on the running Linux instance.
 
 ## Problems and how I solved them (optional)
 
